@@ -1,0 +1,147 @@
+ATIVIDADES ARRAYLIST 
+
+ATV1
+
+package Atividades;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Atv1 {
+
+	public static void main(String[] args) {
+
+		List<String> lista = new ArrayList<>();
+		
+		lista.add("Ana");
+		lista.add("Manu");
+		lista.add("Michelle");
+		lista.add("Júlio");
+		lista.add("Carlos");
+		
+		lista.sort(null);
+		System.out.println(lista);
+		
+	}
+
+}
+
+
+ATV2
+
+package Atividades;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Atv2 {
+
+	public static void main(String[] args) {
+
+		List<String> lista = new ArrayList<>();
+		
+		lista.add("Ana");
+		lista.add("Manu");
+		lista.add("Michelle");
+		lista.add("Júlio");
+		lista.add("Carlos");
+		
+		lista.sort(Collections.reverseOrder());
+		System.out.println(lista);
+		
+	}
+
+}
+
+ATV3
+
+package Atividades;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Atv3 {
+
+	public static void main(String[] args) {
+
+		List<Double> numeros = new ArrayList<>();	
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		//inserir um valor qualquer
+		System.out.println("Insira um valor (insira 0 para finalizar):");
+		
+		double num = scanner.nextDouble();
+		
+		double soma = 0;
+		
+		//verificar o valor
+		while(num != 0) {
+			numeros.add(num);
+			soma = num + soma;
+			System.out.println("Insira um valor (insira 0 para finalizar):");
+			num = scanner.nextDouble();
+		}
+		
+		//inicialização da soma
+		numeros.sort(null);
+		double menorNum = numeros.get(0);
+		double maiorNum = numeros.get(numeros.size()-1);
+		double media = soma / numeros.size();
+		
+		System.out.println("Maior número é: " + maiorNum);
+		System.out.println("Menor número é: " + menorNum);
+		System.out.println("A média é: " + media);
+
+	}
+}
+
+
+ATV4
+
+package Atividades;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Atv4 {
+
+	public static void main(String[] args) {
+
+		List<Integer> numero = new ArrayList<>();
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		//adicionando números na lista
+		numero.add(10);
+		numero.add(20);
+		numero.add(30);
+		numero.add(40);
+		numero.add(50);
+		
+		//solicitando número do usuário
+		System.out.println("Insira um número: ");
+		int searchNumber = scanner.nextInt();
+		
+		//verificando se tem esse número na lista
+		boolean found = false;
+		for(int i = 0; i < numero.size(); i++) {
+			
+			if(numero.get(i) == searchNumber) {
+				System.out.println("Este número " + searchNumber + " está na lista " + i + ".");
+				found = true;
+			}
+		}
+		
+		if(!found) {
+			System.out.println("Este número não está na lista! ");
+		}
+		
+		scanner.close();
+		
+	}
+
+}
